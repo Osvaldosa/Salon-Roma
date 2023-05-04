@@ -1,0 +1,88 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+// Clase para representar un cliente del salón
+class Cliente {
+public:
+    string nombre;
+    string direccion;
+    string localidad;
+    string telefono;
+    string cuit_cuil;
+    string condicion_iva;
+    string email;
+    string nombre_padres;
+    bool autoriza_extras;
+    string horario_llegada;
+
+    int num_invitados;
+    bool incluye_mesas;
+    bool incluye_sillas;
+    bool incluye_manteles;
+    bool incluye_fundas;
+    bool incluye_vajilla;
+    bool incluye_dj;
+
+    int precio;
+    int deposito;
+    string fecha_contratacion;
+
+    vector<int> pagos;
+    vector<string> fechas_pagos;
+    int monto_total_pagado;
+
+    Cliente(string _nombre, string _direccion, string _localidad, string _telefono, string _cuit_cuil,
+            string _condicion_iva, string _email, string _nombre_padres, bool _autoriza_extras, string _horario_llegada,
+            int _num_invitados, bool _incluye_mesas, bool _incluye_sillas, bool _incluye_manteles, bool _incluye_fundas,
+            bool _incluye_vajilla, bool _incluye_dj, int _precio, int _deposito, string _fecha_contratacion) {
+        nombre = _nombre;
+        direccion = _direccion;
+        localidad = _localidad;
+        telefono = _telefono;
+        cuit_cuil = _cuit_cuil;
+        condicion_iva = _condicion_iva;
+        email = _email;
+        nombre_padres = _nombre_padres;
+        autoriza_extras = _autoriza_extras;
+        horario_llegada = _horario_llegada;
+        num_invitados = _num_invitados;
+        incluye_mesas = _incluye_mesas;
+        incluye_sillas = _incluye_sillas;
+        incluye_manteles = _incluye_manteles;
+        incluye_fundas = _incluye_fundas;
+        incluye_vajilla = _incluye_vajilla;
+        incluye_dj = _incluye_dj;
+        precio = _precio;
+        deposito = _deposito;
+        fecha_contratacion = _fecha_contratacion;
+        pagos = vector<int>(15, 0);
+        fechas_pagos = vector<string>(15, "");
+        monto_total_pagado = 0;
+    }
+};
+
+// Función para pedir información del cliente
+Cliente pedirInformacionCliente() {
+    string nombre, direccion, localidad, telefono, cuit_cuil, condicion_iva, email, nombre_padres, horario_llegada;
+    bool autoriza_extras, incluye_mesas, incluye_sillas, incluye_manteles, incluye_fundas, incluye_vajilla, incluye_dj;
+    int num_invitados;
+
+    cout << "Bienvenido al Salón Roma 3.0\n";
+    cout << "Para comenzar, necesitamos algunos datos del cliente:\n";
+
+    cout << "Apellido y nombre: ";
+    getline(cin, nombre);
+
+    cout << "Dirección: ";
+    getline(cin, direccion);
+
+    cout << "Localidad: ";
+    getline(cin, localidad);
+
+    cout << "Teléfono: ";
+    getline(cin, telefono);
+
+    cout <<
